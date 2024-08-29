@@ -6,14 +6,10 @@ const options = {
 
 const APIKEY = "live_PzBU9rP2xydLAXhiyGEsY1xRotmIwRM12MyWYV0OxYf0OAWw6y5PKAt5X6XHhsjQ";
 // const APIKEY = "live_PzBU9rP2xydLAXhiyGEsY1xRotmIwRM12MyWYV0OxYf0OAWw6y5PKAt5X6XHhsjQ";
-const CATAPI = "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=";
+const CATAPI = "https://api.thecatapi.com/v1/images/search?limit=20&has_breeds=1&api_key=";
+const URL = CATAPI+APIKEY
 
-
-fetch(CATAPI, {
-    headers: {
-        'x-api-key': APIKEY
-    }
-})
+fetch(URL)
     .then((response) => {
         return response.json();
     })
@@ -31,7 +27,7 @@ fetch(CATAPI, {
             const card = document.createElement('div');
             card.className = 'card col-md-3';
             card.style.width = '25rem';
-            card.style.height = '40rem';
+            card.style.height = '45rem';
 
             card.innerHTML = `
                 
